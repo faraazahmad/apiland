@@ -9,9 +9,7 @@ export default new Vuex.Store({
     entries: [],
     baseUrl: 'https://api.publicapis.org',
   },
-  getters: {
-    // allEntries: (state) => state.entries,
-  },
+  getters: {},
   mutations: {
     syncEntriesFromApi(state, entries) {
       state.entries = entries;

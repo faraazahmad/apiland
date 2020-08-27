@@ -19,3 +19,28 @@ export default class extends Vue {
   }
 }
 </script>
+
+<style>
+  .flex-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+  }
+
+  .card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 21rem;
+    min-height: 14rem;
+    display: inline-block;
+    transition: 0.15s border-color ease-out;
+  }
+
+  .card, .card-header {
+    box-shadow: none;
+  }
+
+  .card:hover {
+    border-color: #00d1b2;
+  }
+</style>
