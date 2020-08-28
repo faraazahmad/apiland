@@ -7,12 +7,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     entries: [],
+    categories: [],
     baseUrl: 'https://api.publicapis.org',
   },
   getters: {},
   mutations: {
     syncEntriesFromApi(state, entries) {
       state.entries = entries;
+    },
+    syncCategoriesFromApi(state, categories) {
+      state.categories = categories;
     },
   },
   actions: {
@@ -23,6 +27,15 @@ export default new Vuex.Store({
         })
         .catch((error) => {
           console.error(error.message);
+        });
+    },
+    syncCategoriesFromApi(context) {
+      Axios.get(`${context.state.baseUrl}/categories`)
+        .then((response) => {
+          context.commit('syncCategoriesFromApi', response.data);
+        })
+        .catch((error) => {
+          console.error(error);
         });
     },
   },

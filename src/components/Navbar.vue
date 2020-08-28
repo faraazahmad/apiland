@@ -21,7 +21,11 @@
                 </a>
 
                 <a class="navbar-item">
-                    Documentation
+                    <datalist id="categories">
+                        <option v-for="category in categories" :key="category"
+                            v-bind:value="category"/>
+                    </datalist>
+                    <input type="text" list="categories">
                 </a>
                 </div>
 
@@ -41,3 +45,17 @@
         </div>
     </nav>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import { mapState } from 'vuex';
+
+@Component({
+  computed: mapState([
+    'categories',
+  ]),
+})
+export default class Navbar extends Vue {
+    categories!: Array<string>;
+}
+</script>

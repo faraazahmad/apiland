@@ -16,11 +16,16 @@ import store from '@/store/index';
 export default class extends Vue {
   beforeMount() {
     store.dispatch('syncEntriesFromApi');
+    store.dispatch('syncCategoriesFromApi');
   }
 }
 </script>
 
 <style>
+  html, body {
+    background-color: #f9f9f9;
+  }
+
   .flex-container {
     display: grid;
     grid-gap: 1rem;
@@ -28,8 +33,8 @@ export default class extends Vue {
   }
 
   .card {
-    border: 1px solid #eee;
-    border-radius: 5px;
+    border: 1px solid #f2f2f2;
+    border-radius: 0.25rem;
     width: 21rem;
     min-height: 14rem;
     display: inline-block;
