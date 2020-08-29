@@ -34,6 +34,7 @@ export default new Vuex.Store({
           context.commit('syncEntriesFromApi', response.data.entries);
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.error(error.message);
         });
     },
@@ -43,6 +44,7 @@ export default new Vuex.Store({
           context.commit('syncCategoriesFromApi', response.data);
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.error(error);
         });
     },
