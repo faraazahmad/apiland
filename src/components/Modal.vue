@@ -18,6 +18,8 @@
                         </label>
                     </div>
                 </div>
+                <br>
+                <p class="has-text-grey">More filter options coming soon</p>
             </section>
             <footer class="modal-card-foot">
                 <button v-on:click="hideModal()" class="button is-success">Done</button>

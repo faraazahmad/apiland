@@ -5,14 +5,20 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Footer from '@/components/Footer.vue';
 import store from '@/store/index';
 
-@Component
+@Component({
+  components: {
+    Footer,
+  },
+})
 export default class extends Vue {
   beforeMount() {
     store.dispatch('syncEntriesFromApi');
