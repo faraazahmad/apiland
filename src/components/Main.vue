@@ -21,13 +21,16 @@
         </div>
       </section>
 
-      <ul class="flex-container">
+      <ul class="flex-container" v-if="entries">
         <li v-for="entry in filter(entries)" :key="entry.link">
           <a v-bind:href="entry.Link" target="new">
             <Card v-bind:entry="entry"/>
           </a>
         </li>
       </ul>
+      <p class="has-text-centered" v-else>
+        <button class="button is-loading is-large is-light">Loading</button>
+      </p>
     </div>
   </div>
 </template>
