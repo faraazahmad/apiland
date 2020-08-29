@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     entries: [],
     categories: [],
+    filterTags: ['Animals', 'Development'],
     baseUrl: 'https://api.publicapis.org',
   },
   getters: {},
@@ -17,6 +18,13 @@ export default new Vuex.Store({
     },
     syncCategoriesFromApi(state, categories) {
       state.categories = categories;
+    },
+    toggleCategory(state, category: string) {
+      if (state.filterTags.includes(category)) {
+        state.filterTags.splice(state.filterTags.indexOf(category), 1);
+      } else {
+        state.filterTags.push(category);
+      }
     },
   },
   actions: {
@@ -37,6 +45,9 @@ export default new Vuex.Store({
         .catch((error) => {
           console.error(error);
         });
+    },
+    toggleCategory(context, category) {
+      context.commit('toggleCategory', category);
     },
   },
   modules: {

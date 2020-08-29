@@ -1,12 +1,28 @@
 <template>
   <div class="hello">
-    <Navbar/>
+    <Modal/>
 
     <div class="container">
-      <h1 class="title">Public APIs</h1>
+      <section class="hero">
+        <div class="hero-body">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <h1 class="title">Public APIs</h1>
+            </div>
+            <div class="column is-narrow">
+              <button v-on:click="showModal()" class="button is-light">
+                <span class="icon is-medium">
+                  <i class="fas fa-filter"></i>
+                </span>
+                <span>Filter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <ul class="flex-container">
-        <li v-for="entry in entries" :key="entry.link">
+        <li v-for="entry in filter(entries)" :key="entry.link">
           <a v-bind:href="entry.Link" target="new">
             <Card v-bind:entry="entry"/>
           </a>
@@ -20,18 +36,36 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { mapState } from 'vuex';
 import Card from '@/components/Card.vue';
-import Navbar from '@/components/Navbar.vue';
+import Modal from '@/components/Modal.vue';
+import store from '@/store';
 
 @Component({
   components: {
     Card,
-    Navbar,
+    Modal,
   },
   computed: mapState([
     'entries',
   ]),
 })
 export default class Main extends Vue {
-  entries!: Array<object>;
+  entries!: Array<{API: string; Category: string}>;
+
+  filter() {
+    const { entries } = this;
+    const tags = store.state.filterTags;
+
+    // filter by tags first
+    if (tags.length > 0) {
+      return entries.filter((entry) => tags.includes(entry.Category));
+    }
+    return entries;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  showModal() {
+    const modal = document.querySelector('#filter-modal') as Element;
+    modal.classList.add('is-active');
+  }
 }
 </script>

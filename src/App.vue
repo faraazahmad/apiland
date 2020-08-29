@@ -23,7 +23,7 @@ export default class extends Vue {
 
 <style>
   html, body {
-    background-color: #f9f9f9;
+    background-color: #f8f8f8;
   }
 
   .flex-container {
@@ -47,5 +47,26 @@ export default class extends Vue {
 
   .card:hover {
     border-color: #00d1b2;
+  }
+
+  .modal-card-head, .modal-card-foot {
+    border: none;
+  }
+
+  .modal-card-foot {
+    background-color: white;
+  }
+
+  .modal-background {
+    background-color: rgba(256, 256, 256, 0.86);
+  }
+
+  .modal-card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  .checkboxes .checkbox {
+    margin: 0.5rem;
   }
 </style>
