@@ -19,7 +19,14 @@
                     </div>
                 </div>
                 <br>
-                <p class="has-text-grey">More filter options coming soon</p>
+                <article class="message is-info">
+                    <div class="message-body">
+                        <span class="icon">
+                            <i class="fas fa-info"></i>
+                        </span>
+                        More filter options coming soon
+                    </div>
+                </article>
             </section>
             <footer class="modal-card-foot">
                 <button v-on:click="hideModal()" class="button is-success">Done</button>
