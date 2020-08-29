@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Navbar/>
     <router-view/>
     <Footer/>
   </div>
@@ -11,12 +8,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import store from '@/store/index';
 
 @Component({
   components: {
     Footer,
+    Navbar,
   },
 })
 export default class extends Vue {

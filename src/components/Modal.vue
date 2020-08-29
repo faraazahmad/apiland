@@ -3,7 +3,7 @@
         <div class="modal-background" v-on:click="hideModal()"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Filter result</p>
+                <p class="modal-card-title">Filter results</p>
                 <button v-on:click="hideModal()" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
