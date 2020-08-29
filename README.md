@@ -1,4 +1,5 @@
-# apiland
+# API Land
+An interative app to explore plublic APIs which you can use to build side projects.
 
 ## Project setup
 ```

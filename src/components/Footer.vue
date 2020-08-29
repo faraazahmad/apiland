@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        Hey yo!
+        Made by <a target="new" href="https://twitter.com/Faraaz98">Faraaz Ahmad</a>
     </footer>
 </template>
 
