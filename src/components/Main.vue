@@ -23,7 +23,7 @@
 
       <ul class="flex-container" v-if="entries">
         <li v-for="entry in filter(entries)" :key="entry.link">
-          <a v-bind:href="entry.Link" target="_blank">
+          <a v-bind:href="entry.Link" target="_blank" rel="noopener">
             <Card v-bind:entry="entry"/>
           </a>
         </li>
