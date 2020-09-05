@@ -1,5 +1,5 @@
 # API Land
-An interative app to explore plublic APIs which you can use to build side projects.
+An interative app to explore plublic APIs which you can use to build side projects. Live demo at https://faraazahmad.github.io/apiland
 
 ## Project setup
 ```
