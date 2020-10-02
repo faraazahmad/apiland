@@ -42,8 +42,10 @@ export default class extends Vue {
     border-radius: 0.25rem;
     width: 21rem;
     min-height: 14rem;
-    display: inline-block;
+    display: grid;
     transition: 0.15s border-color ease-out;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .card, .card-header {
